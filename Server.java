@@ -47,8 +47,8 @@ public class Server implements Runnable{
 
 	    for (ConnectionHandler ch : connections) {
 	        if (ch != null && ch.out != null) {
-	            ch.SendMessage(message);  // Mesajı istemcilere gönder
-	            System.out.println("Sent to: " + ch.name);  // Kime gönderildiğini göster
+	            ch.SendMessage(message);  
+	            System.out.println("Sent to: " + ch.name);  
 	        }
 	    }
 	}
@@ -59,7 +59,7 @@ public class Server implements Runnable{
 	    try {
 	        done = true;
 	        
-	        if (pool != null) {  // Null kontrolü ekledik
+	        if (pool != null) {  
 	            pool.shutdown();
 	        }
 	        
@@ -133,9 +133,9 @@ public class Server implements Runnable{
 		}
 		
 		public void SendMessage(String message) {
-		    if (out != null) {  // Null kontrolü ekledik
+		    if (out != null) {  
 		        out.println(message);
-		        out.flush();  // Mesajın hemen gönderildiğinden emin ol
+		        out.flush();  
 		    }
 		}
 
